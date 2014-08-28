@@ -7,6 +7,7 @@ version := "1.0"
 scalaVersion := "2.11.2"
 
 libraryDependencies ++= Seq(
+  "com.pidorashque" % "commons_2.11" % "1.0",
   "net.sourceforge.htmlunit" % "htmlunit" % "2.15",
   "org.mapdb" % "mapdb" % "1.0.5",
   "joda-time" % "joda-time" % "2.4",

@@ -1,13 +1,13 @@
-import com.pidorashque.htmlparsers.apachan.write.PostSender
+import com.pidorashque.htmlparsers.apachan.write.{PostImage, PostSender}
 import org.scalatest._
 
 class PostSenderTest extends FeatureSpec with GivenWhenThen with WebClientTest {
   feature("Post sending") {
     val testingThread = new {
-      val url = "http://apachan.net/5255956.html"
+      val url = "http://apachan.net/5188426.html"
       lazy val page = htmlPage(url)
       lazy val postSender = PostSender(page)
-      lazy val captchaPage = postSender.sendPost("TEST")
+      lazy val captchaPage = postSender.sendPost("TEXT", "TITLE", image = PostImage.fromRandom(9))
       lazy val testingPost = captchaPage.post
     }
     import testingThread._
